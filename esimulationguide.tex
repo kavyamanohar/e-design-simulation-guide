@@ -1,0 +1,60 @@
+\documentclass{book}
+
+\usepackage{kavya-book}
+
+
+\begin{document}
+%-----------------------------------
+% For customised Title Page
+\thispagestyle{empty}
+%\input{./title.tex} %Cover page
+\thispagestyle{empty}
+%\input{./inner.tex}	%Inner title page
+%--------------------------------------------------------------------
+
+%Default Title page 
+\title{Electronic Design Automation \\ using \\gEDA and Ngspice}
+%\date{December 2013}
+\author{Kavya Manohar} {%Authors: Kavya Manohar}
+\maketitle
+%----------------------------------------------------------
+%\thispagestyle{empty}
+  
+\textcopyright{}2014
+\\[2cm]
+This work is licensed under a Creative Commons Attribution-Share Alike 4.0 India License. See \url{http://creativecommons.org/licenses/by-sa/4.0/} for more details.
+%------------------------------------------------------------
+
+\clearpage
+\thispagestyle{plain}
+%\par\vspace*{.35\textheight}{\centering Dedicated to my parents\par}  % code for dedication page
+\input{chapters/Acknowledgements.tex}
+
+
+
+
+
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\thispagestyle{empty}
+
+\listoffigures
+\thispagestyle{empty}
+%CHAPTER-----------------------------------------------------------------------
+
+\input{chapters/intro.tex}
+
+
+
+
+
+\begin{appendix}
+%\input{chapters/referencedata.tex}
+\end{appendix}
+\begin{thebibliography}{1}
+
+\end{thebibliography}
+
+
+\end{document}
