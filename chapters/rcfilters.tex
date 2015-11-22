@@ -32,13 +32,13 @@ f_c=\frac{1}{2\pi RC}
 \subsection{Launch eSim}
 
 \paragraph{}
- Launching eSim will take you to the dialog box which asks for the default workspace. Browse the folders and set the wokspace location. It will finally end up in the eSim window shown in Figure \ref{LaunchWindow}.
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{LaunchWindow.png}
-\caption{Launching eSim will take you to this window}
-\label{LaunchWindow}
-\end{figure}
+ Launching eSim will take you to the dialog box which asks for the default workspace. Browse the folders and set the wokspace location. It will finally end up in the eSim window.% shown in Figure \ref{LaunchWindow}.
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.8\textwidth]{LaunchWindow.png}
+%\caption{Launching eSim will take you to this window}
+%\label{LaunchWindow}
+%\end{figure}
 
 \subsection{Create a New Project}
 
@@ -70,14 +70,14 @@ done using the Place Wire option. The `Place Wire' and `Place Component' tools a
 %\end{figure}
 
 
-\paragraph{Placing the Components:} Normally all the components availbale in eSim can be chosen by left mouse click in the grid. The components are listed in different libraries. See Figure \ref{librarylist}.
+\paragraph{Placing the Components:} Normally all the components availbale in eSim can be chosen by left mouse click in the grid. The components are listed in different libraries. %See Figure \ref{librarylist}.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth, height=4cm]{librarylist.png}
-\caption{The Kicad Libraries of components}
-\label{librarylist}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.5\textwidth, height=4cm]{librarylist.png}
+%\caption{The Kicad Libraries of components}
+%\label{librarylist}
+%\end{figure}
 
 \begin{itemize}
 \item
@@ -90,24 +90,24 @@ Choose C from eSim\_Devices
 Choose GND from power
 \end{itemize}
 
-Select the resistor and edit its component value to 1k as shown in Figure \ref{editvalue}. Also edit the value of capacitor as 1 $\mu$ F. You can just type in 1u.
+Select the resistor and edit its component value to 1k as shown in Figure \ref{editvalueR}. Also edit the value of capacitor as 1 $\mu$ F. You can just type in 1u.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth, height=6cm]{editvalue.png}
 \caption{Editing the value field of component R}
-\label{editvalue}
+\label{editvalueR}
 \end{figure}
 
 Wire the components to get the circuit. A global label `Input'  and `Output' has been added to identify that node whose voltage will be later recorded and plotted. Global label is added from the right toolbar of Eeschema.
 
-\paragraph{Annotating the circuit:} Once the schematic diagram is completed, annotate it so that the `question marks' associated with the components are converted to meaningful numbers automatically.For that choose annotate button from the top toolbar(See Figure \ref{toptoolbar} and in the subsequenct dialogue boxes appearing click ok and finally close. See Figure \ref{annotation}.
+\paragraph{Annotating the circuit:} Once the schematic diagram is completed, annotate it so that the `question marks' associated with the components are converted to meaningful numbers automatically.For that choose annotate button from the top toolbar(See Figure \ref{toptoolbarRC} and in the subsequenct dialogue boxes appearing click ok and finally close. See Figure \ref{annotationRC}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth, height=4cm]{toptoolbar.png}
 \caption{Choose annotate from the toop tool bar}
-\label{toptoolbar}
+\label{toptoolbarRC}
 \end{figure}
 
 
@@ -136,34 +136,34 @@ its netlist. Netlist is a list of components in the schematic along with their c
 information. To do so, click on the Generate netlist tool from the top toolbar. Click on
 spice from the window that opens up. Check the option Default Format. Then click
 on Generate. Save the netlist. This will be a .cir file. Do
-not change the directory while saving. See Figure \ref{createnetlist}.
+not change the directory while saving. See Figure \ref{createnetlistRC}.
  Now the netlist is ready to be simulated. 
 \begin{figure}
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=\linewidth]{annotation.png}
   \caption{Annotation}
-  \label{annotation}
+  \label{annotationRC}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=\linewidth]{createnetlist.png}
   \caption{Netlist Generation}
-  \label{createnetlist}
+  \label{createnetlistRC}
 \end{minipage}
 \end{figure}
 
 \subsection{KiCad to Ngspice conversion}
 
 \paragraph{} To convert KiCad netlist of RC circuit to NgSpice
-compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2spice}.  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
+compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2spiceRC}.  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth, height=4cm]{kcd2spice.png}
 \caption{Choose Kicad to Ngspice tool}
-\label{kcd2spice}
+\label{kcd2spiceRC}
 \end{figure}
 
 
@@ -198,7 +198,12 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 
 This would plot the frequency response characteristics of input and output of the RC high pass filter. The resultant characteristics is shown in the Figure \ref{HPFresponse}. 
 
-
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm, height=8cm]{HPFresponse.png}
+\caption{The frequency response of RC highpass filter}
+\label{HPFresponse}
+\end{figure}
 
 The charcteristics of RC low pass filter would be as shown in Figure \ref{LPFresponse}.
 
@@ -209,12 +214,7 @@ The charcteristics of RC low pass filter would be as shown in Figure \ref{LPFres
 \label{LPFresponse}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=12cm, height=8cm]{HPFresponse.png}
-\caption{The frequency response of RC highpass filter}
-\label{HPFresponse}
-\end{figure}
+
 \section*{RESULT}
 The circuit for plotting the frequency response of filter was implemented and simulated.
 
