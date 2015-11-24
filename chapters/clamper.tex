@@ -1,31 +1,24 @@
-\chapter{CLIPPING CIRCUIT}
+\chapter{CLAMPING CIRCUIT}
 
 \section*{AIM}
-\paragraph{}To design and implement circuitfor clipping waveforms
+\paragraph{}To design and implement circuit for clamping waveforms
 \section*{DESIGN AND CIRCUIT DIAGRAM}
 \paragraph{}
 
-Inorder to plot the transient response of clipping circuits use a SINE source whose amplitude, frequency, phase etc can be fixed durinmg simulation. The SINE source is connected across a series connection of resistor and diode. The circuits for series clipper (Diode connected in series with the load) and shunt clippers (Diode connected in shunt with the load)  are shown in figures \ref{seriesclipper} and  \ref{shuntclipper} respectively. 
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{seriesclipper.png}
-\caption{Schematic diagram for series clipper circuit}
-\label{seriesclipper}
-\end{figure}
+Inorder to plot the transient response of clamping circuits use a SINE source whose amplitude, frequency, phase etc can be fixed during simulation. The SINE source is connected across a series connection of a diode and a capacitor and the output is taken across  the diode and the GND.The circuit for a clamper circuit is in Figure  \ref{clamper} .
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{shuntclipper.png}
-\caption{Schematic diagram for shunt clipper circuit}
-\label{shuntclipper}
+\includegraphics[width=0.8\textwidth]{clamper.png}
+\caption{Schematic diagram for clamper circuit}
+\label{clamper}
 \end{figure}
+
 
 \section*{PROCEDURE}
 
-\paragraph{}Explained below are the steps to plot the transint resonse of a clipper. 
-\subsection{Launch eSim}
+\paragraph{}Explained below are the steps to plot the transint resonse of a clamper. 
+\subsection*{Launch eSim}
 
 \paragraph{}
  Launching eSim will take you to the dialog box which asks for the default workspace. Browse the folders and set the wokspace location. It will finally end up in the eSim window.% shown in Figure \ref{LaunchWindow}.
@@ -36,11 +29,11 @@ Inorder to plot the transient response of clipping circuits use a SINE source wh
 %\label{LaunchWindow}
 %\end{figure}
 
-\subsection{Create a New Project}
+\subsection*{Create a New Project}
 
 \paragraph{ } The new project is created by clicking the New icon on the
-menubar. The name of the project is given in the pop up window as `seriesclipper' for the circuit in figure \ref{seriesclipper} and `seriesclipper' for the circuit in Figure \ref{shuntclipper}. Follow the steps explaied below to implement either of them.
-\subsection{Create the Schematic}
+menubar. The name of the project is given in the pop up window as `clamper' for the circuit in figure \ref{clamper}. Follow the steps explaied below to implement the circuit.
+\subsection*{Create the Schematic}
 
 \paragraph{}  To create the schematic, click the very first icon of the
 left toolbar. This will open KiCad Eeschema.
@@ -79,14 +72,14 @@ done using the Place Wire option. The `Place Wire' and `Place Component' tools a
 \item
 Choose SINE source from eSim\_Sources
 \item
-Choose R from eSim\_Devices
+Choose C from eSim\_Devices
 \item
 Choose D from eSim\_Devices
 \item
 Choose GND from power
 \end{itemize}
 
-Select the resistor and edit its component value to 1k.% as shown in Figure \ref{editvalueRes}.
+Select the capacitor and edit its component value to 1u.% as shown in Figure \ref{editvalueRes}.
 
 %\begin{figure}[h]
 %\centering
@@ -97,7 +90,7 @@ Select the resistor and edit its component value to 1k.% as shown in Figure \ref
 
 Wire the components to get the circuit. A global label `in'  and `out' has been added to identify the node whose voltage will be later recorded and plotted. Global label is added from the right toolbar of Eeschema.
 
-\paragraph{Annotating the circuit:} Once the schematic diagram is completed, annotate it so that the `question marks' associated with the components are converted to meaningful numbers automatically.For that choose annotate button from the top toolbar and in the subsequenct dialogue boxes appearing click ok and finally close. See Figure \ref{annotationclip}.
+\paragraph{Annotating the circuit:} Once the schematic diagram is completed, annotate it so that the `question marks' associated with the components are converted to meaningful numbers automatically.For that choose annotate button from the top toolbar and in the subsequenct dialogue boxes appearing click ok and finally close. See Figure \ref{annotationclamp}.
 
 %\begin{figure}[h]
 %\centering
@@ -108,7 +101,7 @@ Wire the components to get the circuit. A global label `in'  and `out' has been 
 
 
 
-Now we have the circuit diagram as shown in Figure \ref{seriesclipper}.
+Now we have the circuit diagram as shown in Figure \ref{clamper}.
 
 
 \paragraph{Note:} If some libraries are found missing, you can add them from the `Preferences` menu by following the procedure: 
@@ -125,31 +118,31 @@ Choose the required libraries from `user/share/kicad/library' and click OK butto
 
 \end{enumerate}
 
-\subsection{Create Netlist}
+\subsection*{Create Netlist}
 
 \paragraph{}To simulate the circuit that has been created in the previous section, we need to generate
 its netlist. Netlist is a list of components in the schematic along with their connection
 information. To do so, click on the Generate netlist tool from the top toolbar. Click on
 spice from the window that opens up. Check the option Default Format. Then click
 on Generate. Save the netlist. This will be a .cir file. Do
-not change the directory while saving. See Figure \ref{createnetlistclip}.
+not change the directory while saving. See Figure \ref{createnetlistclamp}.
  Now the netlist is ready to be simulated. 
 \begin{figure}
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=\linewidth]{annotation.png}
   \caption{Annotation}
-  \label{annotationclip}
+  \label{annotationclamp}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=\linewidth]{createnetlist.png}
   \caption{Netlist Generation}
-  \label{createnetlistclip}
+  \label{createnetlistclamp}
 \end{minipage}
 \end{figure}
 
-\subsection{KiCad to Ngspice conversion}
+\subsection*{KiCad to Ngspice conversion}
 
 \paragraph{} To convert KiCad netlist of clipper circuit to NgSpice
 compatible netlist click on KiCad to Ngspice icon .  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
@@ -163,13 +156,13 @@ compatible netlist click on KiCad to Ngspice icon .  Now you can choose the type
 %\end{figure}
 %
 
-\paragraph{Analysis:}Choose analysis type as `Transient' and choose Dec scale. Dec sclae allows plotting as in a semilog graph.  Give the values of time variables as shown in Figure \ref{analysistime}. Enter the time to be varied from `Start time=0 ms' to `Stop time=20ms' with a `Step time=1 ms'.
+\paragraph{Analysis:}Choose analysis type as `Transient' and choose Dec scale. Dec sclae allows plotting as in a semilog graph.  Give the values of time variables as shown in Figure \ref{clampertransient}. Enter the time to be varied from `Start time=0 ms' to `Stop time=4ms' with a `Step time=0.01 ms'.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth, height=4cm]{analysistime.png}
+\includegraphics[width=\textwidth, height=4cm]{clampertransient.png}
 \caption{Choose analysis type as `transient' and enter the values}
-\label{analysistime}
+\label{clampertransient}
 \end{figure}
 
 \paragraph{Source Details:} Set the details of `sine' source as shown in Figure \ref{sinesource}.
@@ -177,9 +170,9 @@ compatible netlist click on KiCad to Ngspice icon .  Now you can choose the type
 \item
 Offset value(volts): 0
 \item
-Amplitude(volts): 5
+Amplitude(volts): 4
 \item
-Frequency(Hz): 50
+Frequency(Hz): 1k
 \item
 Delay time(Seconds): 0
 \item
@@ -188,9 +181,9 @@ Damping factor(1/seconds):0
 \end{itemize}
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth, height=4cm]{sinesource.png}
+\includegraphics[width=\textwidth, height=4cm]{sinesourceclamper.png}
 \caption{Enter the parameters of `Sine' source}
-\label{sinesource}
+\label{sinesourceclamper}
 \end{figure}
 
 
@@ -204,43 +197,27 @@ Damping factor(1/seconds):0
 
 
 \paragraph{}
-\subsection{Simulate} To run Ngspice simulation click the simulation icon in the left tool bar. It will open up two windows - ngspice plotting window and python plotting window. Inorder to plot the transient response of the clipper you can use either plotting types.
+\subsection*{Simulate} To run Ngspice simulation click the simulation icon in the left tool bar. It will open up two windows - ngspice plotting window and python plotting window. Inorder to plot the transient response of the clipper you can use either plotting types.
 
-\paragraph{Python plotting:}This provides a graphical interface for plotting. We need to plot the value of voltage across the `SINE' source as well as the load resistor with respect to time. We have already labled these nodes as \texttt{in} and \texttt{out} respectively The nodes will will listed on the GUI. Choose  `in' and `out' and click on `plot' button. See Figure \ref{seriesclipperpython}.
+\paragraph{Python plotting:}This provides a graphical interface for plotting. We need to plot the value of voltage across the `SINE' source as well as the diode with respect to time. We have already labled these nodes as \texttt{in} and \texttt{out} respectively The nodes will will listed on the GUI. Choose  `in' and `out' and click on `plot' button. See Figure \ref{clamperpython}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=12cm, height=8cm]{seriesclipperpython.png}
-\caption{The transient response of the series clipper on python plotting window}
-\label{seriesclipperpython}
+\includegraphics[width=12cm, height=8cm]{clamperpython.png}
+\caption{The transient response of the clamper on python plotting window}
+\label{clamperpython}
 \end{figure}
 
-\paragraph{Ngspice plotting:}. Time of simulation has already been set in the previous step as 0 ms to 20 ms. Use the commands in ngspice plotting window for obtaining the required plots.
+\paragraph{Ngspice plotting:}. Time of simulation has already been set in the previous step. Use the commands in ngspice plotting window for obtaining the required plots.
 
 \texttt{plot v(out), v(in) }
 
 \paragraph{}
 
-This would plot the transient response of input and output of the series clipper. The resultant characteristics is shown in the Figure \ref{seriesclipperngspice}. 
+This would plot the transient response of input and output of the clamper. 
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=12cm, height=8cm]{seriesclipperngspice.png}
-\caption{The transient response of the series clipper in ngspice plotting window}
-\label{seriesclipperngspice}
-\end{figure}
-
-\paragraph{}Repeat the same set of procedures for implementing the shunt clipper. Use the schematic as shown in Figure \ref{shuntclipper}. Upon p using python plotting, the resultant transient analysis would look like Figure \ref{shuntclipperpython}
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=12cm, height=8cm]{shuntclipperpython.png}
-\caption{The transient response of the shunt clipper on python plotting window}
-\label{shuntclipperpython}
-\end{figure}
 
 \section*{RESULT}
-The circuit for plotting the transient analysis of clipper was implemented and simulated.
+The circuit for plotting the transient analysis of clamper was implemented and simulated.
 
 
