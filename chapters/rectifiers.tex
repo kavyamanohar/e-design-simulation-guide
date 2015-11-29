@@ -1,11 +1,11 @@
 \chapter{FULL WAVE RECTIFIERS}
 
 \section*{AIM}
-\paragraph{}To design and implement circuit for full wave rectifiers with and without filter.
+\paragraph{}To design and implement circuit for full wave rectifiers with C and LC filter.
 \section*{DESIGN AND CIRCUIT DIAGRAM}
 \paragraph{}
 
-Inorder to plot the transient response of fullwave bridge rectifier use a SINE source whose amplitude, frequency, phase etc can be fixed during simulation. The SINE source is connected across a series connection of a bridge combination of diodes and the output is taken across a load of resistance 1k$\Omega$. The output is filtered using a capacitor as shown in Figure \ref{BRCfilter}	as well as an LC filter as shown in Figure \ref{BRLCfilter}. The two circuits can be implemented as separate projects.
+Inorder to plot the transient response of fullwave bridge rectifier use a SINE source whose amplitude, frequency, phase etc can be fixed during simulation. The SINE source is connected across a  bridge combination of diodes and the output is taken across a load of resistance 1k$\Omega$. The output is filtered using a capacitor as shown in Figure \ref{BRCfilter}	as well as an LC filter as shown in Figure \ref{BRLCfilter}. The two circuits can be implemented as separate projects.
 
 \begin{figure}[h]
 \centering
@@ -24,7 +24,7 @@ Inorder to plot the transient response of fullwave bridge rectifier use a SINE s
 
 \section*{PROCEDURE}
 
-\paragraph{}Explained below are the steps to plot the transint resonse of a bridge rectifier with filter. 
+\paragraph{}The steps to plot the transient response of a bridge rectifier with filter are explained below. 
 \subsection*{Launch eSim}
 
 \paragraph{}
@@ -88,7 +88,7 @@ Choose D from eSim\_Devices
 Choose GND from power
 \end{itemize}
 
-Select the capacitor and edit its component value to 1u and edit the component value of inductor to 15.% as shown in Figure \ref{editvalueRes}.
+Select the capacitor and edit its component value to 1u and edit the component value of inductor to 15H.% as shown in Figure \ref{editvalueRes}.
 
 %\begin{figure}[h]
 %\centering
@@ -153,7 +153,7 @@ not change the directory while saving. See Figure \ref{createnetlist4}.
 
 \subsection*{KiCad to Ngspice conversion}
 
-\paragraph{} To convert KiCad netlist of clipper circuit to NgSpice
+\paragraph{} To convert KiCad netlist of bridge rectifier circuit to NgSpice
 compatible netlist click on KiCad to Ngspice icon .  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
 
 
@@ -223,7 +223,7 @@ Damping factor(1/seconds):0
 
 \paragraph{}
 
-This would plot the transient response of input and output of the clamper. 
+This would plot the transient response of input and output of the bridge rectifier. 
 
 \paragraph{}Repeat the same set of steps for the circuit with LC filter shown in Figure \ref{BRLCfilter}. The corresponding output is shown in Figure \ref{BRLCfilterout}.  It can be seen that the ripple has largely been reduced in Figure \ref{BRLCfilterout}. The change in characteristics of the ripple may be experimentally observed by varying the value of inductor as L=5H, L=0.1H etc. This is left as an exercise for the user.
 

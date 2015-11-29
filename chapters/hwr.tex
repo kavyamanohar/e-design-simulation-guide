@@ -6,7 +6,7 @@
 \section*{DESIGN AND CIRCUIT DIAGRAM}
 \paragraph{}
 
-Inorder to plot the transient response of half wave bridge rectifier use a SINE source whose amplitude, frequency, phase etc can be fixed during simulation. The SINE source is connected across a series connection of a diode and a load of resistance 1k$\Omega$.The output is filtered using a capacitor as shown in Figure \ref{HRCfilter}	as well as an LC filter as shown in Figure \ref{HRLCfilter}. The two circuits can be implemented as separate projects.
+Inorder to plot the transient response of half wave rectifier use a SINE source whose amplitude, frequency, phase etc can be fixed during simulation. The SINE source is connected across a series connection of a diode and a load of resistance 1k$\Omega$. The output is filtered using a capacitor as shown in Figure \ref{HRCfilter}	as well as an LC filter as shown in Figure \ref{HRLCfilter}. The two circuits can be implemented as separate projects.
 
 \begin{figure}[h]
 \centering
@@ -25,7 +25,7 @@ Inorder to plot the transient response of half wave bridge rectifier use a SINE 
 
 \section*{PROCEDURE}
 
-\paragraph{}Explained below are the steps to plot the transint resonse of a bridge rectifier with filter. 
+\paragraph{}The steps to plot the transint resonse of a half wave rectifier with filter are explained below. 
 \subsection*{Launch eSim}
 
 \paragraph{}
@@ -47,7 +47,7 @@ menubar. The name of the project is given in the pop up window as `halfwaverecti
 left toolbar. This will open KiCad Eeschema.
 
 
-To create a schematic in KiCad, we need to place the required components. After all the required components of the clipper circuit are placed, wiring is
+To create a schematic in KiCad, we need to place the required components. After all the required components of the half wave circuit are placed, wiring is
 done using the Place Wire option. The `Place Wire' and `Place Component' tools are available in the left toolbar. Scroll up and down for zooming in and out.
 
 
@@ -154,8 +154,8 @@ not change the directory while saving. See Figure \ref{createnetlist5}.
 
 \subsection*{KiCad to Ngspice conversion}
 
-\paragraph{} To convert KiCad netlist of clipper circuit to NgSpice
-compatible netlist click on KiCad to Ngspice icon .  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
+\paragraph{} To convert KiCad netlist of half wave rectifier circuit to NgSpice
+compatiable netlist click on KiCad to Ngspice icon .  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
 
 
 %\begin{figure}[h]
@@ -236,6 +236,6 @@ This would plot the transient response of input and output of the half wave rect
 \end{figure}
 
 \section*{RESULT}
-The circuit for plotting the transient analysis of clamper was implemented and simulated.
+The circuit for plotting the transient analysis of half wave rectifier was implemented and simulated.
 
 

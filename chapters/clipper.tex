@@ -1,11 +1,11 @@
 \chapter{CLIPPING CIRCUIT}
 
 \section*{AIM}
-\paragraph{}To design and implement circuitfor clipping waveforms
+\paragraph{}To design and implement a circuit for clipping waveforms
 \section*{DESIGN AND CIRCUIT DIAGRAM}
 \paragraph{}
 
-Inorder to plot the transient response of clipping circuits use a SINE source whose amplitude, frequency, phase etc can be fixed durinmg simulation. The SINE source is connected across a series connection of resistor and diode. The circuits for series clipper (Diode connected in series with the load) and shunt clippers (Diode connected in shunt with the load)  are shown in figures \ref{seriesclipper} and  \ref{shuntclipper} respectively. 
+Inorder to plot the transient response of clipping circuits use a SINE source whose amplitude, frequency, phase etc can be fixed during simulation. The SINE source is connected across a series connection of resistor and diode. The circuits for series clipper (Diode connected in series with the load) and shunt clippers (Diode connected in shunt with the load)  are shown in figures \ref{seriesclipper} and  \ref{shuntclipper} respectively. 
 
 
 \begin{figure}[h]
@@ -24,8 +24,8 @@ Inorder to plot the transient response of clipping circuits use a SINE source wh
 
 \section*{PROCEDURE}
 
-\paragraph{}Explained below are the steps to plot the transint resonse of a clipper. 
-\subsection{Launch eSim}
+\paragraph{}The steps to plot the transient response of a clipper are explained below. 
+\subsection*{Launch eSim}
 
 \paragraph{}
  Launching eSim will take you to the dialog box which asks for the default workspace. Browse the folders and set the wokspace location. It will finally end up in the eSim window.% shown in Figure \ref{LaunchWindow}.
@@ -36,11 +36,11 @@ Inorder to plot the transient response of clipping circuits use a SINE source wh
 %\label{LaunchWindow}
 %\end{figure}
 
-\subsection{Create a New Project}
+\subsection*{Create a New Project}
 
 \paragraph{ } The new project is created by clicking the New icon on the
-menubar. The name of the project is given in the pop up window as `seriesclipper' for the circuit in figure \ref{seriesclipper} and `seriesclipper' for the circuit in Figure \ref{shuntclipper}. Follow the steps explaied below to implement either of them.
-\subsection{Create the Schematic}
+menubar. The name of the project is given in the pop up window as `seriesclipper' for the circuit in figure \ref{seriesclipper} and `shuntclipper' for the circuit in Figure \ref{shuntclipper}. Follow the steps explaied below to implement either of them.
+\subsection*{Create the Schematic}
 
 \paragraph{}  To create the schematic, click the very first icon of the
 left toolbar. This will open KiCad Eeschema.
@@ -125,7 +125,7 @@ Choose the required libraries from `user/share/kicad/library' and click OK butto
 
 \end{enumerate}
 
-\subsection{Create Netlist}
+\subsection*{Create Netlist}
 
 \paragraph{}To simulate the circuit that has been created in the previous section, we need to generate
 its netlist. Netlist is a list of components in the schematic along with their connection
@@ -149,7 +149,7 @@ not change the directory while saving. See Figure \ref{createnetlistclip}.
 \end{minipage}
 \end{figure}
 
-\subsection{KiCad to Ngspice conversion}
+\subsection*{KiCad to Ngspice conversion}
 
 \paragraph{} To convert KiCad netlist of clipper circuit to NgSpice
 compatible netlist click on KiCad to Ngspice icon .  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
@@ -163,7 +163,7 @@ compatible netlist click on KiCad to Ngspice icon .  Now you can choose the type
 %\end{figure}
 %
 
-\paragraph{Analysis:}Choose analysis type as `Transient' and choose Dec scale. Dec sclae allows plotting as in a semilog graph.  Give the values of time variables as shown in Figure \ref{analysistime}. Enter the time to be varied from `Start time=0 ms' to `Stop time=20ms' with a `Step time=1 ms'.
+\paragraph{Analysis:}Choose analysis type as `Transient'. Give the values of time variables as shown in Figure \ref{analysistime}. Enter the time to be varied from `Start time=0 ms' to `Stop time=20ms' with a `Step time=1 ms'.
 
 \begin{figure}[h]
 \centering
@@ -204,9 +204,9 @@ Damping factor(1/seconds):0
 
 
 \paragraph{}
-\subsection{Simulate} To run Ngspice simulation click the simulation icon in the left tool bar. It will open up two windows - ngspice plotting window and python plotting window. Inorder to plot the transient response of the clipper you can use either plotting types.
+\subsection*{Simulate} To run Ngspice simulation click the simulation icon in the left tool bar. It will open up two windows - ngspice plotting window and python plotting window. Inorder to plot the transient response of the clipper you can use either plotting types.
 
-\paragraph{Python plotting:}This provides a graphical interface for plotting. We need to plot the value of voltage across the `SINE' source as well as the load resistor with respect to time. We have already labled these nodes as \texttt{in} and \texttt{out} respectively The nodes will will listed on the GUI. Choose  `in' and `out' and click on `plot' button. See Figure \ref{seriesclipperpython}.
+\paragraph{Python plotting:}This provides a graphical interface for plotting. We need to plot the value of voltage across the `SINE' source as well as the load resistor with respect to time. We have already labled these nodes as \texttt{in} and \texttt{out} respectively The nodes will be listed on the GUI. Choose  `in' and `out' and click on `plot' button. See Figure \ref{seriesclipperpython}.
 
 \begin{figure}[h]
 \centering
@@ -230,7 +230,7 @@ This would plot the transient response of input and output of the series clipper
 \label{seriesclipperngspice}
 \end{figure}
 
-\paragraph{}Repeat the same set of procedures for implementing the shunt clipper. Use the schematic as shown in Figure \ref{shuntclipper}. Upon p using python plotting, the resultant transient analysis would look like Figure \ref{shuntclipperpython}
+\paragraph{}Repeat the same set of procedures for implementing the shunt clipper. Use the schematic as shown in Figure \ref{shuntclipper}. Upon using python plotting, the resultant transient analysis would look like Figure \ref{shuntclipperpython}
 
 
 \begin{figure}[h]

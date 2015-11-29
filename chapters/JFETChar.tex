@@ -6,7 +6,7 @@
 \subsection*{DESIGN AND CIRCUIT DIAGRAM}
 \paragraph{}
 
-Inorder to draw the diode characteristics, we have to use a DC source of voltage which may be varied during simulation. The diode in the circuit should be associated with a coresponding `JFET model' during  simulations. As in a hardware circuits lab, a curernt limiting resistor may also be used in series with the diode and the DC source. The resulting circuit diagram is shown in the Figure \ref{JFETckt}  below:
+Inorder to draw the JFET characteristics, we have to use a DC source of voltage which may be varied during simulation. The JFET in the circuit should be associated with a coresponding `JFET model' during  simulations. The resulting circuit diagram is shown in the Figure \ref{JFETckt}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{JFETckt.png}
@@ -63,8 +63,7 @@ To create a schematic in KiCad, we need to place the required components. %See F
 %\label{kicad}
 %\end{figure}
 
- Figure \ref{placecomponent}
-shows the icon on the right toolbar which opens the component library. After all the required components of the experimen circuit are placed, wiring is
+ Clicking on the icon on the right toolbar opens the component library. After all the required components of the circuit are placed, wiring is
 done using the Place Wire option. %as shown in the Figure \ref{placewire}.
  Scroll up and down for zooming in and out.
 
@@ -229,7 +228,7 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 
 \paragraph{Ngspice Model:} No Ngspice model to be given.
 
-\paragraph{Device Model:} The JFET is a device whose model details must be given for simulation. Let us choose the generic N-chnnel JFET model availabe in the eSim model library. Browse it from /opt/eSim/src/deviceModelLibrary/JFET/NJF.lib. See Figure \ref{JFETmodel}.
+\paragraph{Device Model:} The JFET is a device whose model details must be given for simulation. Let us choose the generic N-chnnel JFET model availabe in the eSim model library. Browse it from \texttt{/opt/eSim/src/deviceModelLibrary/JFET/NJF.lib}. See Figure \ref{JFETmodel}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth, height=6cm]{JFETmodel.png}

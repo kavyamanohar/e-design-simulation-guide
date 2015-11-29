@@ -1,4 +1,4 @@
-\chapter{RC filters}
+\chapter{RC FILTERS}
 
 \section*{AIM}
 \paragraph{}To design and implement circuits for passive RC highpass and lowpass filters.
@@ -6,7 +6,7 @@
 \section*{DESIGN AND CIRCUIT DIAGRAM}
 \paragraph{}
 
-Inorder to plot the frequency response of RC highpass and lowpass filters use an AC source whose frequency can be varied durinmg simulation. The AC source is connected across a series connection of resistor and capacitor. The corresponding circuits for RC highpass filter and lowpass filters are shown in figures \ref{rchpf} and  \ref{rclpf} respectively. The cutoff frequency of the filter will be given by \begin{equation}
+Inorder to plot the frequency response of RC highpass and lowpass filters use an AC source whose frequency can be varied durinmg simulation. The AC source of voltage. It is connected across a series connection of resistor and capacitor. The corresponding circuits for RC highpass filter and lowpass filters are shown in figures \ref{rchpf} and  \ref{rclpf} respectively. The cutoff frequency of the filter will be given by \begin{equation}
 f_c=\frac{1}{2\pi RC}
 \end{equation}
 
@@ -26,10 +26,10 @@ f_c=\frac{1}{2\pi RC}
 
 \section*{PROCEDURE}
 
-\paragraph{}Explained below are the steps to plot the characteristics of RC high pass filter. Follow the same procedure to obtain the response of RC lowpass filter (Set the project name as RC\_LPF and draw the schematic as shown in figure \ref{rclpf}.)
+\paragraph{}The steps to plot the characteristics of RC high pass filter are explained below. Follow the same procedure to obtain the response of RC lowpass filter. Note that these are two separate projects. 
 
 
-\subsection{Launch eSim}
+\subsection*{Launch eSim}
 
 \paragraph{}
  Launching eSim will take you to the dialog box which asks for the default workspace. Browse the folders and set the wokspace location. It will finally end up in the eSim window.% shown in Figure \ref{LaunchWindow}.
@@ -40,11 +40,11 @@ f_c=\frac{1}{2\pi RC}
 %\label{LaunchWindow}
 %\end{figure}
 
-\subsection{Create a New Project}
+\subsection*{Create a New Project}
 
 \paragraph{ } The new project is created by clicking the New icon on the
 menubar. The name of the project is given in the pop up window as RC\_HPF for highpass filter.
-\subsection{Create the Schematic}
+\subsection*{Create the Schematic}
 
 \paragraph{}  To create the schematic, click the very first icon of the
 left toolbar. This will open KiCad Eeschema.
@@ -101,9 +101,10 @@ Select the resistor and edit its component value to 1k as shown in Figure \ref{e
 
 Wire the components to get the circuit. A global label `Input'  and `Output' has been added to identify that node whose voltage will be later recorded and plotted. Global label is added from the right toolbar of Eeschema.
 
-\paragraph{Annotating the circuit:} Once the schematic diagram is completed, annotate it so that the `question marks' associated with the components are converted to meaningful numbers automatically.For that choose annotate button from the top toolbar(See Figure \ref{toptoolbarRC} and in the subsequenct dialogue boxes appearing click ok and finally close. See Figure \ref{annotationRC}.
+\paragraph{Annotating the circuit:} Once the schematic diagram is completed, annotate it so that the `question marks' associated with the components are converted to meaningful numbers automatically.For that choose annotate button from the top toolbar. See Figure \ref{toptoolbarRC} and in the subsequent dialogue boxes appearing click ok and finally close. See Figure \ref{annotationRC}. Now we have the circuit diagram as shown in Figure \ref{rchpf}.
 
-\begin{figure}[h]
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth, height=4cm]{toptoolbar.png}
 \caption{Choose annotate from the toop tool bar}
@@ -112,7 +113,6 @@ Wire the components to get the circuit. A global label `Input'  and `Output' has
 
 
 
-Now we have the circuit diagram as shown in Figure \ref{rchpf}.
 
 
 \paragraph{Note:} If some libraries are found missing, you can add them from the `Preferences` menu by following the procedure: 
@@ -129,7 +129,7 @@ Choose the required libraries from `user/share/kicad/library' and click OK butto
 
 \end{enumerate}
 
-\subsection{Create Netlist}
+\subsection*{Create Netlist}
 
 \paragraph{}To simulate the circuit that has been created in the previous section, we need to generate
 its netlist. Netlist is a list of components in the schematic along with their connection
@@ -153,10 +153,10 @@ not change the directory while saving. See Figure \ref{createnetlistRC}.
 \end{minipage}
 \end{figure}
 
-\subsection{KiCad to Ngspice conversion}
+\subsection*{KiCad to Ngspice conversion}
 
 \paragraph{} To convert KiCad netlist of RC circuit to NgSpice
-compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2spiceRC}.  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
+compatiable netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2spiceRC}.  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
 
 
 \begin{figure}[h]
@@ -167,7 +167,7 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 \end{figure}
 
 
-\paragraph{Analysis:}Choose AC analysis type and choose Dec scale. Dec sclae allows plotting as in a semilog graph.  Give the values of AC variables as shown in Figure \ref{acanalysis}. Enter the name of your AC source as on the circuit (here v1) and let its frequency be varied from 1Hz to 10kHz with 10 points chosen in each deacade interval of frequency.
+\paragraph{Analysis:}Choose AC analysis type and choose Dec scale. Dec sclae allows plotting as in a semilog graph sheet.  Give the values of AC variables as shown in Figure \ref{acanalysis}. Enter the name of your AC source as on the circuit (here v1) and let its frequency be varied from 1Hz to 10kHz with 10 points chosen in each deacade interval of frequency.
 
 \begin{figure}[h]
 \centering
@@ -188,15 +188,26 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 
 
 \paragraph{}
-\subsection{Simulate} To run Ngspice simulation click the simulation icon in the left tool bar. It will open up two windows - ngspice plotting window and python plotting window. Inorder to plot the frequency response characteristics let us use the commands in ngspice plotting window. 
+\subsection*{Simulate} To run Ngspice simulation click the simulation icon in the left tool bar. It will open up two windows - ngspice plotting window and python plotting window. Inorder to plot the frequency response characteristics let us use the commands in ngspice plotting window. 
 
-\paragraph{}We need to plot the value of voltage across the AC source Vs the frequency in logarithmic scale as well as the voltage across the resistor Vs the frequency in logarithmic scale. Let us use the command:
+\paragraph{}We need to plot two graphs.
+
+\begin{enumerate}
+\item
+Input voltage value for different frequencies. 
+
+\item
+Output voltage value for different frequencies. 
+\end{enumerate}
+
+To plot these, let us use the command:\\
 
 \texttt{plot v(Input), v(Output) }
 
 \paragraph{}
 
-This would plot the frequency response characteristics of input and output of the RC high pass filter. The resultant characteristics is shown in the Figure \ref{HPFresponse}. 
+This would plot the frequency response characteristics of input and output of the RC high pass filter. The resultant characteristics is shown in the Figure \ref{HPFresponse}. The red indicates the Input and the blue indicates the output. The charcteristics of RC low pass filter would be as shown in Figure \ref{LPFresponse}.
+
 
 \begin{figure}[h]
 \centering
@@ -205,7 +216,6 @@ This would plot the frequency response characteristics of input and output of th
 \label{HPFresponse}
 \end{figure}
 
-The charcteristics of RC low pass filter would be as shown in Figure \ref{LPFresponse}.
 
 \begin{figure}[h]
 \centering
