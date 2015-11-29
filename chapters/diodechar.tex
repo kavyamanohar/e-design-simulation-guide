@@ -1,13 +1,13 @@
 \chapter{DIODE CHARACTERISTICS}
 
 \subsection*{AIM}
-\paragraph{}To design and implement a circuit for simulating the V-I characteristics of a diode.
+\paragraph{}To design and implement a circuit to simulate the V-I characteristics of a diode.
 
 \subsection*{DESIGN AND CIRCUIT DIAGRAM}
 \paragraph{}
 
-Inorder to draw the diode characteristics, we have to use a DC source of voltage which may be varied during simulation. The diode in the circuit should be associated with a coresponding `Diode model' during  simulations. As in a hardware circuits lab, a curernt limiting resistor may also be used in series with the diode and the DC source. The resulting circuit diagram is shown in the Figure \ref{diodeckt}  below:
-\begin{figure}[h]
+Inorder to draw the diode characteristics, we have to use a DC source of voltage. Its value may be varied during simulation. The diode in the circuit should be associated with a `diode model'. A curernt limiting resistor may also be used in series with the diode and the DC source. The resulting circuit diagram is shown in the Figure \ref{diodeckt}.
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{diodeckt.png}
 \caption{Schematic diagram for diode characteristics}
@@ -19,8 +19,9 @@ Inorder to draw the diode characteristics, we have to use a DC source of voltage
 \subsubsection{Launch eSim}
 
 \paragraph{}
- Launching eSim will take you to the dialog box which asks for the default workspace. Browsw the folders and set the wokspace location. It will finally end up in the eSim window shown in Figure \ref{LaunchWindow}.
-\begin{figure}[h]
+ Launching eSim will take you to the dialog box. It asks for the default workspace. Browse the folders and set the wokspace location. It will end up in the eSim window shown in Figure \ref{LaunchWindow}.
+ 
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{LaunchWindow.png}
 \caption{Launching eSim will take you to this window}
@@ -30,8 +31,8 @@ Inorder to draw the diode characteristics, we have to use a DC source of voltage
 \subsubsection{Create a New Project}
 
 \paragraph{ } The new project is created by clicking the New icon on the
-menubar. The name of the project is given in the pop up window as shown in Figure.\ref{newproject}.
-\begin{figure}[h]
+menubar. Give the name of the project ,'Diodechar' in the pop up window as shown in Figure.\ref{newproject}. 
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{newproject.png}
 \caption{Creating new project}
@@ -44,28 +45,28 @@ menubar. The name of the project is given in the pop up window as shown in Figur
 left toolbar as shown in the Figure \ref{newschematic} .This will open KiCad Eeschema.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth, height=6cm]{newschematic.png}
 \caption{Creating new schematic diagram}
 \label{newschematic}
 \end{figure}
 
-To create a schematic in KiCad, we need to place the required components. See Figure \ref{kicad}
+To create a schematic in KiCad, we need to place the required components. See Figure \ref{kicad}.  Figure \ref{placecomponent}
+shows the icon on the right toolbar which opens the component library. After all the required components of the simple RC circuit are placed, wiring is
+done using the Place Wire option as shown in the Figure \ref{placewire}. Scroll up and down for zooming in and out.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth, height=6cm]{kicad.png}
 \caption{The Kicad Eeschema page}
 \label{kicad}
 \end{figure}
 
- Figure \ref{placecomponent}
-shows the icon on the right toolbar which opens the component library. After all the required components of the simple RC circuit are placed, wiring is
-done using the Place Wire option as shown in the Figure \ref{placewire}.Scroll up and down for zooming in and out.
 
 
-\begin{figure}
+
+\begin{figure}[H]
 \begin{minipage}{.5\textwidth}
   \centering
   \includegraphics[width=\linewidth]{placecomponent.png}
@@ -83,7 +84,7 @@ done using the Place Wire option as shown in the Figure \ref{placewire}.Scroll u
 
 \paragraph{Placing the Components:} Normally all the components availbale in eSim can be chosen by left mouse click in the grid. The components are listed in different libraries. See Figure \ref{librarylist}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth, height=4cm]{librarylist.png}
 \caption{The Kicad Libraries of components}
@@ -103,7 +104,7 @@ Choose GND from power
 
 Select the resistor and edit its component value to 1k as shown in Figure \ref{editvalue}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth, height=6cm]{editvalue.png}
 \caption{Editing the value field of component R}
@@ -114,7 +115,7 @@ Wire the components to get the circuit. A global label `diode' has been added to
 
 \paragraph{Annotating the circuit:} Once the schematic diagram is completed, annotate it so that the `question marks' associated with the components are converted to meaningful numbers automatically.For that choose annotate button from the top toolbar(See Figure \ref{toptoolbar} and in the subsequenct dialogue boxes appearing click ok and finally close. See Figure \ref{annotation}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth, height=4cm]{toptoolbar.png}
 \caption{Choose annotate from the toop tool bar}
@@ -166,11 +167,11 @@ not change the directory while saving.See Figure \ref{createnetlist}.
 
 \subsubsection{KiCad to Ngspice conversion}
 
-\paragraph{} To convert KiCad netlist of RC circuit to NgSpice
+\paragraph{} To convert KiCad netlist of the circuit to NgSpice
 compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2spice}.  Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth, height=4cm]{kcd2spice.png}
 \caption{Choose Kicad to Ngspice tool}
@@ -180,7 +181,7 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 
 \paragraph{Analysis:}Choose DC analysis type. Give the values of DC variables as shown in Figure \ref{analysis}. Enter the name of your DC source as on the circuit (here v1) and let its value be varied from -15V to +15V with a step of 0.1 V.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth, height=4cm]{analysis.png}
 \caption{Choose DC analysis type and enter the values}
@@ -192,7 +193,7 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 \paragraph{Ngspice Model:} No Ngspice model to be given.
 
 \paragraph{Device Model:} The Diode is a device whose model details must be given for simulation. Let us choose the generic diode model availabe in the eSim model library. Browse it from /opt/eSim/src/deviceModelLibrary/Diode/D.lib. See Figure \ref{diodemodel}.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth, height=6cm]{diodemodel.png}
 \caption{Choose the required diode model}
@@ -205,7 +206,7 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 
 \subsubsection{Simulate} To run Ngspice simulation click the simulation icon in the left tool bar. It will open up two windows - ngspice plotting window and python plotting window. Inorder to plot the diode characteristics let us use the commands in ngspice plotting window. 
 
-\paragraph{}We need to plot the value of voltage across the diode Vs the current through it. Since the current through the diode is same as the current through the voltage source,v1 (since both are in series connection) let us use the command:
+\paragraph{}We need to plot the value of voltage across the diode Vs the current through it. Since the current through the diode is same as the current through the voltage source, v1 (since both are in series connection) let us use the command:
 
 \texttt{plot i(v1) vs v(diode)}
 
@@ -213,7 +214,7 @@ This would pop up the required characteristics fo the diode as defined in the di
 
 The resultant characteristics is shown in the Figure \ref{diodechara}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=12cm, height=6cm]{diodechar.png}
 \caption{The characteristics of Diode}
