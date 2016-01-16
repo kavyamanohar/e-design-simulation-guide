@@ -99,7 +99,7 @@ Choose DC sources from eSim\_Sources
 \item
 Choose resistors from eSim\_Devices
 \item
-Choose $MOS_N$ from eSim\_Devices
+Choose MOS\_N from eSim\_Devices
 \item
 Choose GND from power
 \end{itemize}
@@ -171,7 +171,7 @@ not change the directory while saving.See Figure \ref{createnetlist8}.
 \subsubsection{KiCad to Ngspice conversion}
 
 \paragraph{} To convert KiCad netlist of MOSFET circuit to NgSpice
-compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2spice7}. 8Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
+compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2spice8}. 8Now you can choose the type of analysis, source details, device models ngspice models and subcircuit models.
 
 
 \begin{figure}[h]
@@ -197,7 +197,7 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth, height=4cm]{analysisdrain.png}
+\includegraphics[width=\textwidth, height=4cm]{analysisdrainMOS.png}
 \caption{Choose DC analysis type and enter the values of V2}
 \label{analysisdrainMOS}
 \end{figure}
@@ -206,31 +206,31 @@ compatible netlist click on KiCad to Ngspice icon as shown in Figure \ref{kcd2sp
 \centering
 \includegraphics[width=\textwidth, height=4cm]{analysistransfer.png}
 \caption{Choose DC analysis type and enter the values of V1}
-\label{analysistransfer}
+\label{analysistransferMOS}
 \end{figure}
 \paragraph{Source Details:} 
 \begin{itemize}
-\item \textbf{Drain Charcteristics:} Give the value of DC variables as shown in Figure \ref{dcsourcedrain}. Leave the column of V2 blank. Give the value of V1 as 0V, which is the gate voltage. (You may repeat the experiment by varying the gate voltage as V1=1V, V1=2V etc.)
+\item \textbf{Drain Charcteristics:} Give the value of DC variables as shown in Figure \ref{dcsourcedrainMOS}. Leave the column of V2 blank. Give the value of V1 as 3V, which is the gate voltage. (You may repeat the experiment by varying the gate voltage as V1=4V, V1=6V etc.)
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth, height=4cm]{dcsourcedrain.png}
+\includegraphics[width=\textwidth, height=4cm]{dcsourcedrainMOS.png}
 \caption{Enter the details of fixed source V1}
-\label{dcsourcedrain}
+\label{dcsourcedrainMOS}
 \end{figure}
 
-\item \textbf{Transfer Charcteristics:} Give the value of DC variables as shown in Figure \ref{dcsourcetransfer}. Leave the column of V1 blank. Give the value of V2 as 3V, which is the drain voltage. 
+\item \textbf{Transfer Charcteristics:} Give the value of DC variables as shown in Figure \ref{dcsourcetransferMOS}. Leave the column of V1 blank. Give the value of V2 as 10V, which is the drain voltage. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth, height=4cm]{dcsourcetransfer.png}
 \caption{Enter the details of fixed source V2}
-\label{dcsourcetransfer}
+\label{dcsourcetransferMOS}
 \end{figure}
 
 \end{itemize}
 
 \paragraph{Ngspice Model:} No Ngspice model to be given.
 
-\paragraph{Device Model:} The MOSFET is a device whose model details must be given for simulation. Let us choose the generic N-chnnel MOSFET model availabe in the eSim model library. Browse it from \texttt{/opt/eSim/src/deviceModelLibrary/MOSFET/NJF.lib}. See Figure \ref{MOSFETmodel}.
+\paragraph{Device Model:} The MOSFET is a device whose model details must be given for simulation. Let us choose the generic N-chnnel MOSFET model availabe in the eSim model library. Browse it from \texttt{/opt/eSim/src/deviceModelLibrary/MOS/NMOS-5um.lib}. See Figure \ref{MOSFETmodel}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth, height=6cm]{MOSFETmodel.png}
@@ -250,27 +250,27 @@ Now you are ready to see the simulation results.
 
 \texttt{plot -i(v2) vs v(drain)}
 
-This would pop up the drain characteristics of the MOSFET as defined in the MOSFET model NJF.lib. For a differnt device model the characteristics would be slightly different.
+This would pop up the drain characteristics of the MOSFET as defined in the MOSFET model NMOS-5um.lib. For a differnt device model the characteristics would be slightly different.
 
-The resultant characteristics is shown in the Figure \ref{MOSFETdrain0} and \ref{MOSFETdrain1}.
+The resultant characteristics is shown in the Figure \ref{MOSFETdrain3}.
 \begin{figure}[h]
 \centering
-\includegraphics[width=12cm, height=6cm]{MOSFETdrain0.png}
-\caption{The drain characteristics of MOSFET with gate voltage =0V }
-\label{MOSFETdrain0}
+\includegraphics[width=12cm, height=6cm]{MOSFETdrain3.png}
+\caption{The drain characteristics of MOSFET with gate voltage =3V }
+\label{MOSFETdrain3}
 \end{figure}
-\begin{figure}[h]
-\centering
-\includegraphics[width=12cm, height=6cm]{MOSFETdrain1.png}
-\caption{The drain characteristics of MOSFET with gate voltage =1V }
-\label{MOSFETdrain1}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=12cm, height=6cm]{MOSFETdrain1.png}
+%\caption{The drain characteristics of MOSFET with gate voltage =1V }
+%\label{MOSFETdrain1}
+%\end{figure}
 
 \paragraph{Transfer Characteritics:} In the ngspice plotting window, type the following command:
 
 \texttt{plot -i(v2) vs v(gate)}
 
-This would pop up the transfer characteristics of the MOSFET as defined in the MOSFET model NJF.lib. For a differnt device model the characteristics would be slightly different.
+This would pop up the transfer characteristics of the MOSFET as defined in the MOSFET model NMOS-5um.lib. For a differnt device model the characteristics would be slightly different.
 
 The resultant characteristics is shown in the Figure \ref{MOSFETtransfer}.
 
@@ -278,7 +278,7 @@ The resultant characteristics is shown in the Figure \ref{MOSFETtransfer}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=12cm, height=6cm]{MOSFETtransfer.png}
-\caption{The transfer characteristics of MOSFET with drain voltage =3V }
+\caption{The transfer characteristics of MOSFET with drain voltage =10V }
 \label{MOSFETtransfer}
 \end{figure}
 
